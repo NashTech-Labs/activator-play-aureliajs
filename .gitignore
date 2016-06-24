@@ -20,6 +20,5 @@ target/*
 .cache
 logs/*
 .settings/
-/bin/
 .cache-main
 .cache-tests

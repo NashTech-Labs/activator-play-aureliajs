@@ -11,19 +11,6 @@ class HomeController @Inject() extends Controller {
 
 
   def index = Action {
-    Ok("login/signup.")
+    Ok(views.html.index("Your new application is ready."))
   }
-
-
-  def login = Action { request =>
-    Logger.info(" request => " + request.body.asText)
-    Ok("Successful")
-  }
-
-  def signUp = Action { request =>
-    Logger.info(" request => " + request.body.asText)
-    Ok("Successful signUp")
-  }
-
-
 }

@@ -1,0 +1,16 @@
+<template>
+  <div class="container">
+    <form submit.delegate="login()">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" value.bind="email" id="email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" value.bind="password" id="password" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+      <a href='/#/signup'>Don't have an account ? Sign up</a>
+    </form>
+  </div>
+</template>

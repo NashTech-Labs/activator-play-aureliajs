@@ -13,6 +13,23 @@ export class Login{
       }
 
   login(){
-    this.router.navigate('dashboard');
+    let xhr = new XMLHttpRequest();
+    let jsonData = {userName: this.email, password: this.password}
+    xhr.open('POST','http://127.0.0.1:9000/login',false);
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                let result  = xhr.response;
+                if(result === 'Failure'){
+                  console.log("wrong credential.")
+                }else{
+                  this.router.navigate('dashboard');
+                }
+            } else {
+                console.log("Some Error Occured.")
+            }
+        }
+    };
+    xhr.send(JSON.stringify(jsonData));
   }
 }
